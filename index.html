@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="mensagem"></span>
+    <span id="mensagem1"></span>
+
+    <script>
+        var requestOptions = {
+            method: 'GET',
+        };
+
+        fetch("https://intflask.pauloprecioso.repl.co/hello", requestOptions)
+            .then(response => response.text())
+            .then(result => document.getElementById("mensagem").innerHTML = result)
+            .catch(error => console.log('error', error));
+        fetch("https://intflask.pauloprecioso.repl.co/data", requestOptions)
+            .then(response => response.text())
+            .then(result => document.getElementById("mensagem1").innerHTML = result)
+            .catch(error => console.log('error', error));
+    </script>
+</body>
+</html>
